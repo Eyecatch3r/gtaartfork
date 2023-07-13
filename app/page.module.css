@@ -42,13 +42,13 @@
 
 @keyframes glowingAnimation {
   0% {
-    text-shadow: 0 0 5px rgba(255, 0, 251, 0.5);
+    text-shadow: 0 5px 5px rgb(255, 255, 255);
   }
   50% {
-    text-shadow: 0 0 20px rgba(255, 0, 251, 0.5);
+    text-shadow: 0 200px 200px rgb(255, 255, 255);
   }
   100% {
-    text-shadow: 0 0 50px rgba(255, 0, 251, 0.5);
+    text-shadow: 0 5px 5px rgb(255, 255, 255);
   }
 }
 
