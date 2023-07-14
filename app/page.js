@@ -1,14 +1,86 @@
 'use client'
-import Image from 'next/image'
-import styles from './page.module.css'
+import { useState } from 'react';
+import Image from 'next/image';
+import styles from './page.module.css';
+
 export default function Home() {
-  return (
-    <main className={styles.main}>
-        <div>
-            <h1 className="transition filter duration-500 hover:drop-shadow-[0_7px_11px_rgba(100,100,100,1)]">GTA Artwork Generator</h1>
-            <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.36.1/gradio.js" async />
-            <gradio-app info="false" src="https://eyecatcher-itsjayqz-gta5-artwork-diffusion.hf.space"></gradio-app>
-        </div>
-    </main>
-  )
+    const [prompt, setPrompt] = useState('');
+    const [image, setImage] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    const handleImageLoad = () => {
+        setImageLoaded(true);
+    };
+
+
+    const handleInputChange = (e) => {
+        setPrompt(e.target.value);
+    };
+
+    const handleQuery = async () => {
+        setIsLoading(true);
+        const data = { inputs: prompt+" gtav style" };
+        const response = await query(data);
+        const imageUrl = URL.createObjectURL(response);
+        setImage(imageUrl);
+        setIsLoading(false);
+    };
+
+    async function query(data) {
+        const response = await fetch(
+            "https://api-inference.huggingface.co/models/ItsJayQz/GTA5_Artwork_Diffusion",
+            {
+                headers: { Authorization: "Bearer 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" },
+                method: "POST",
+                body: JSON.stringify(data),
+            }
+        );
+        const result = await response.blob();
+        return result;
+    }
+
+
+
+    return (
+        <main className={styles.main}>
+            <div>
+                <h1 className={styles.title}>
+                    GTA Artwork Generator
+                </h1>
+                <div className={styles.container}>
+                    <input
+                        type="text"
+                        value={prompt}
+                        onChange={handleInputChange}
+                        placeholder="Enter prompt"
+                        className={styles.input}
+                    />
+                    <button onClick={handleQuery} className={styles.button}>
+                        Generate Artwork
+                    </button>
+                    <br/>
+                    {isLoading ? (
+                        <div className={styles.loading}>
+                            <div className={styles.spinner}></div>
+                        </div>
+                    ) : image ? (
+                        <div
+                            className={styles.imageContainer}
+                        >
+                            <Image
+                                src={image}
+                                alt="Generated Artwork"
+                                width={500} // Replace with the actual width of the generated image
+                                height={500} // Replace with the actual height of the generated image
+                                className={styles.image}
+                                onLoad={handleImageLoad}
+                            />
+                        </div>
+                    ) : null}
+                </div>
+            </div>
+        </main>
+    );
 }
+
