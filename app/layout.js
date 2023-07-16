@@ -6,11 +6,6 @@ import {loadFull} from "tsparticles";
 import Particles from "react-tsparticles";
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Gta Art Style Generator',
-}
-
-
 
 export default function RootLayout({ children }) {
 
