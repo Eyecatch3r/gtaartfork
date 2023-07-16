@@ -4,7 +4,20 @@
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
+  z-index: 1;
   min-height: 100vh;
+}
+
+.container {
+  position: relative;
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none; /* Make particles unclickable */
 }
 
 .description {

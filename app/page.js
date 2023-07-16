@@ -1,10 +1,13 @@
 'use client'
-import { useState } from 'react';
-import Image from 'next/image';
-import styles from './page.module.css';
+import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
+import styles from "./page.module.css";
+import React from "react";
+
+
 
 export default function Home() {
-    const [prompt, setPrompt] = useState('');
+    const [prompt, setPrompt] = useState("");
     const [image, setImage] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -12,7 +15,6 @@ export default function Home() {
     const handleImageLoad = () => {
         setImageLoaded(true);
     };
-
 
     const handleInputChange = (e) => {
         setPrompt(e.target.value);
@@ -51,30 +53,21 @@ export default function Home() {
 
     return (
         <main className={styles.main}>
+
             <div>
-                <h1 className={styles.title}>
-                    GTA Artwork Generator
-                </h1>
+                <h1 className={styles.title}>GTA Artwork Generator</h1>
                 <div className={styles.container}>
-                    <input
-                        type="text"
-                        value={prompt}
-                        onChange={handleInputChange}
-                        placeholder="Enter prompt"
-                        className={styles.input}
-                    />
+                    <input type="text" value={prompt} onChange={handleInputChange} placeholder="Enter prompt" className={styles.input} />
                     <button onClick={handleQuery} className={styles.button}>
                         Generate Artwork
                     </button>
-                    <br/>
+                    <br />
                     {isLoading ? (
                         <div className={styles.loading}>
                             <div className={styles.spinner}></div>
                         </div>
                     ) : image ? (
-                        <div
-                            className={styles.imageContainer}
-                        >
+                        <div className={styles.imageContainer}>
                             <Image
                                 src={image}
                                 alt="Model currently unavailable, please try again"
@@ -87,7 +80,10 @@ export default function Home() {
                     ) : null}
                 </div>
             </div>
+
         </main>
+
+
     );
 }
 
