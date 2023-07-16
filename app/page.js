@@ -20,10 +20,17 @@ export default function Home() {
 
     const handleQuery = async () => {
         setIsLoading(true);
-        const data = { inputs: prompt+" gtav style" };
+        const data = { inputs: prompt + " gtav style" };
         const response = await query(data);
-        const imageUrl = URL.createObjectURL(response);
-        setImage(imageUrl);
+
+        if (response) {
+            const imageUrl = URL.createObjectURL(response);
+            setImage(imageUrl);
+            setImageLoaded(true);
+        } else {
+            setImageLoaded(false);
+        }
+
         setIsLoading(false);
     };
 
@@ -70,7 +77,7 @@ export default function Home() {
                         >
                             <Image
                                 src={image}
-                                alt="Generated Artwork"
+                                alt="Model currently unavailable, please try again"
                                 width={500} // Replace with the actual width of the generated image
                                 height={500} // Replace with the actual height of the generated image
                                 className={styles.image}
