@@ -56,24 +56,25 @@ export default function Home() {
 
             <div>
                 <h1 className={styles.title}>GTA Artwork Generator</h1>
-                <div className={styles.container}>
-                    <input type="text" value={prompt} onChange={handleInputChange} placeholder="Enter prompt" className={styles.input} />
-                    <button onClick={handleQuery} className={styles.button}>
+                <div className={`${styles.container} min-w-[300px] md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto`}>
+                    <input type="text" value={prompt} onChange={handleInputChange} placeholder="Enter prompt" className={`${styles.input} mb-4`} />
+                    <button onClick={handleQuery} className={`${styles.button} bg-blue-500 md:mt-4 text-white py-2 px-4 rounded-md w-full`}>
                         Generate Artwork
                     </button>
-                    <br />
                     {isLoading ? (
-                        <div className={styles.loading}>
+                        <div className={`${styles.loading} mt-4`}>
                             <div className={styles.spinner}></div>
                         </div>
                     ) : image ? (
-                        <div className={styles.imageContainer}>
+                        <div className={`${styles.imageContainer} max-w-full mt-4`}>
                             <Image
                                 src={image}
                                 alt="Model currently unavailable, please try again"
-                                width={500} // Replace with the actual width of the generated image
-                                height={500} // Replace with the actual height of the generated image
-                                className={styles.image}
+                                width={300}
+                                height={300}
+                                sizes={'80vw'}
+                                style={{width: '90%', height: 'auto'}}
+                                className={`${styles.image} max-w-full h-auto`}
                                 onLoad={handleImageLoad}
                             />
                         </div>

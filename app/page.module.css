@@ -10,6 +10,8 @@
 
 .container {
   position: relative;
+  min-width: auto;
+
 }
 
 #tsparticles {
@@ -103,6 +105,7 @@
 
 .button {
   padding: 10px 20px;
+  margin-top: 10px;
   background-color: rgba(255, 0, 251, 0.5);
   border: none;
   border-radius: 4px;
