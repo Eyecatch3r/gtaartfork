@@ -139,20 +139,32 @@
   100% { opacity: 1; }
 }
 
+@media (max-width: 622px) {
+  .loading {
+    position: absolute;
+    top: 27%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+  }
+}
 .loaded {
   opacity: 1;
 }
-.loading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@media (min-width: 623px) {
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
+
 
 .spinner {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  margin-top: 10px;
   border: 3px solid rgba(0, 0, 0, 0.1);
   border-top-color: rgba(208, 2, 204, 0.5);
   animation: spin 0.5s infinite linear;
