@@ -47,6 +47,7 @@ export default function Page() {
         setSearchResults(filteredBySearch);
     }, [searchQuery, selectedRole, allNPCs]);
 
+
     const handleRoleChange = (e) => {
 
         setSelectedRole(e.target.value)
