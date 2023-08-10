@@ -74,7 +74,7 @@ export default function Home() {
                                 height={300}
                                 sizes={'80vw'}
                                 style={{width: '90%', height: 'auto'}}
-                                className={`${styles.image} max-w-full h-auto`}
+                                className={`${styles.image}`}
                                 onLoad={handleImageLoad}
                             />
                         </div>

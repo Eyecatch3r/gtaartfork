@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from '../page.module.css';
 import { listAllNPCs } from '../persistence';
 import Image from 'next/dist/client/legacy/image';
@@ -13,6 +13,11 @@ export default function Page() {
     const [allNPCs, setAllNPCs] = useState([]);
     const [selectedNPCId, setSelectedNPCId] = useState(null);
     const [selectedRole, setSelectedRole] = useState('Unselected');
+
+    const handleContainerClick = (id) => {
+        setSelectedNPCId(id);
+    };
+
     useEffect(() => {
         async function fetchAllNPCs() {
             try {
@@ -63,9 +68,7 @@ export default function Page() {
         setSearchResults(filteredResults);
     };
 
-    const handleContainerClick = (id) => {
-        setSelectedNPCId(id);
-    };
+
 
     return (
         <main className={styles.main}>
@@ -134,6 +137,7 @@ export default function Page() {
                                         width={250} // Adjust the width value as needed
                                         height={250} // Adjust the height value as needed
                                         layout="intrinsic"
+                                        sizes={'80vw'}
                                         className={`${styles.image}`}
                                     />
                                 </div>

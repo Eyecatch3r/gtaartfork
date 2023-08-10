@@ -26,8 +26,8 @@
 
 .infoContainer {
   display: flex;
-  align-items: center; /* Align items vertically */
-  margin-bottom: 20px; /* Adjust spacing as needed */
+  align-items: start; /* Align items vertically */
+  margin-bottom: 50px; /* Adjust spacing as needed */
 }
 
 .textContainer h1,
@@ -44,7 +44,6 @@
   display: flex;
   justify-content: flex-end; /* Align image to the top right */
   align-items: flex-start; /* Align image to the top */
-  margin-bottom: 60%;
 }
 
 .characterInput {
@@ -312,8 +311,10 @@
 
 .resultContainer {
   background: rgba(255, 255, 255, 0.15);
+  height: 110%;
   border-radius: 8px;
-  padding: 20px;
+  padding: 25px;
+  padding-top: 0px;
   margin: 15px;
   animation: fade-in 0.5s ease;
   backdrop-filter: blur(10px);
