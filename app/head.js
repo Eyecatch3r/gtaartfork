@@ -6,7 +6,7 @@ function YourPage() {
             <Head>
                 {/* Add your desired metadata tags */}
                 <meta property="og:title" content="GTA Artwork Maker" />
-                <title></title>
+                <title/>
                 {/* Add more metadata tags as needed */}
             </Head>
         </>

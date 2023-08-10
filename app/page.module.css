@@ -8,6 +8,192 @@
   min-height: 100vh;
 }
 
+.unselected {
+  /* Customize the styles to make the unselected container smaller or adjust other properties */
+  /* For example, you can adjust the width, height, padding, margin, etc. */
+  display: flex;
+  flex-direction: column; /* Display the text below the picture */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text horizontally */
+  width: 150px; /* Adjust as needed */
+  height: 210px; /* Adjust as needed */
+  margin: 10px; /* Adjust as needed */
+}
+
+.unselected Image {
+  margin-bottom: 10px;
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 20px; /* Adjust spacing as needed */
+}
+
+.textContainer h1,
+.textContainer h2 {
+  margin-bottom: 5%;
+}
+
+.textContainer {
+  flex: 1; /* Take up remaining space */
+  padding: 5px; /* Adjust spacing as needed */
+}
+
+.npcImageContainer {
+  display: flex;
+  justify-content: flex-end; /* Align image to the top right */
+  align-items: flex-start; /* Align image to the top */
+  margin-bottom: 60%;
+}
+
+.characterInput {
+  margin-bottom: 12px;
+}
+
+.select {
+  appearance: none;
+  outline: 10px #ff00d5;
+  border: 0;
+  border-radius: 9999px;
+  box-shadow: none;
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+}
+
+.linkButton {
+  width: fit-content;
+  z-index: 2;
+  margin-top: 10px;
+  margin-left: 20px;
+  background: none;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  outline: none;
+  justify-content: flex-end;
+  animation: fade-in 0.5s ease;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.linkButton:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+  box-shadow: 0 0 65px rgba(208, 2, 204, 0.5);
+}
+
+.select option {
+  background: #3b3b3b;
+}
+
+.dropdownSearch:hover {
+  transition: transform 0.5s ease;
+  box-shadow: 0 0 65px rgba(208, 2, 204, 0.5);
+}
+
+.dropdownSearch {
+  max-width: 200px;
+  width: 100%;
+  margin-top: 10px;
+  background: none;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  outline: none;
+  animation: fade-in 0.5s ease;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.dropdown {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.dropdown option {
+  background: #3b3b3b;
+}
+
+.success {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: rgb(37, 164, 2);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.alert {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: rgb(245, 3, 3);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column; /* Display items in a column layout */
+  align-items: stretch; /* Stretch items to fill the container width */
+  gap: 16px; /* Add some spacing between form items */
+}
+
+.paragraph {
+  margin-bottom: 10px;
+}
+
+.searchinput {
+  width: 100%;
+  background: transparent;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+.search {
+  color: #efeded;
+  font-size: 1.125rem; /* text-lg equivalent */
+  font-weight: bold; /* font-bold equivalent */
+  height: 100%; /* h-full equivalent */
+  width: 91%; /* w-full equivalent */
+  background-color: transparent; /* bg-transparent equivalent */
+  padding-left: 0.75rem; /* px-3 equivalent */
+  padding-right: 0.75rem; /* px-3 equivalent */
+  outline: none; /* focus:outline-none equivalent */
+  border: none; /* focus:border-none equivalent */
+  transition: border-color 0.2s; /* focus:border-none equivalent */
+}
+
+.search:focus {
+  border-color: transparent; /* focus:border-none equivalent */
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+
 .container {
   position: relative;
   min-width: auto;
@@ -62,12 +248,76 @@
   min-height: 100vh;
 }
 
+.search::-webkit-input-placeholder {
+  color: #efeded; /* Change the color to your desired value */
+}
+
+.search:-moz-placeholder {
+  color: #efeded;
+}
+
+.search::-moz-placeholder {
+  color: #efeded;
+}
+
+.search:-ms-input-placeholder {
+  color: #efeded;
+}
+
+.searchContainer {
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  display: flex;
+  flex-flow: wrap;
+  top: 10%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  animation: fade-in 0.5s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.resultsContainer {
+  display: flex;
+  flex-flow: wrap;
+}
+
 .container {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   padding: 20px;
+  margin: 15px;
   animation: fade-in 0.5s ease;
   backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.selectedResultContainer {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.resultContainer:hover {
+  transform: scale(1.05); /* Adjust the scale factor as desired */
+  transition: transform 0.5s ease;
+  box-shadow: 0 0 65px rgba(208, 2, 204, 0.5); /* Adjust the color and size as desired */
+}
+
+
+.resultContainer {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px;
+  animation: fade-in 0.5s ease;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -541,9 +791,9 @@
     border: none;
     border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
     background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
+            to bottom,
+            rgba(var(--background-start-rgb), 1),
+            rgba(var(--callout-rgb), 0.5)
     );
     background-clip: padding-box;
     backdrop-filter: blur(24px);
@@ -556,9 +806,9 @@
     padding: 2rem;
     height: 200px;
     background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
+            to bottom,
+            transparent 0%,
+            rgb(var(--background-end-rgb)) 40%
     );
     z-index: 1;
   }
