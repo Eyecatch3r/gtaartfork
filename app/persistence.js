@@ -1,6 +1,6 @@
 'use server'
 import {PrismaClient} from '@prisma/client'
-
+import backup from "./dbbackup";
 const prisma = new PrismaClient()
 
 export async function listAllNPCs(){
@@ -17,4 +17,17 @@ export async function listAllNPCs(){
              Role: formData.role,
          },
      });
+
+     /**for (let row of backup) {
+         await prisma.FormData.create({
+                 data: {
+                     Name: row.Name,
+                     Occupation: row.Occupation,
+                     Description: row.Description,
+                     image: row.image,
+                     Role: row.Role
+                 }
+             }
+         )
+     }**/
 }

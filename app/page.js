@@ -56,16 +56,19 @@ export default function Home() {
 
             <div>
                 <h1 className={styles.title}>GTA Artwork Generator</h1>
-                <div className={`${styles.container} min-w-[300px] md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto`}>
-                    <input type="text" value={prompt} onChange={handleInputChange} placeholder="Enter prompt" className={`${styles.input} mb-4`} />
+                <div className={`${styles.mainContainer} min-w-[300px] md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto`}>
+                    <form className={styles.searchinput}>
+                        <input type="text" value={prompt} onChange={handleInputChange} placeholder="Enter prompt" className={`${styles.search} mb-4`} />
+                        {isLoading?
+                            <div className={`${styles.loading}`}>
+                                <div className={styles.spinner}></div>
+                            </div> : null
+                        }
+                    </form>
                     <button onClick={handleQuery} className={`${styles.button} bg-blue-500 md:mt-4 text-white py-2 px-4 rounded-md w-full`}>
                         Generate Artwork
                     </button>
-                    {isLoading ? (
-                        <div className={`${styles.loading} mt-4`}>
-                            <div className={styles.spinner}></div>
-                        </div>
-                    ) : image ? (
+                    {image ? (
                         <div className={`${styles.imageContainer} max-w-full mt-4`}>
                             <Image
                                 src={image}

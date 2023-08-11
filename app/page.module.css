@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding-top: 20px;
   z-index: 1;
   min-height: 100vh;
 }
@@ -26,7 +26,7 @@
 
 .infoContainer {
   display: flex;
-  align-items: start; /* Align items vertically */
+  align-items: flex-start; /* Align items vertically */
   margin-bottom: 50px; /* Adjust spacing as needed */
 }
 
@@ -150,6 +150,7 @@
 }
 
 .searchinput {
+  display: flex;
   width: 100%;
   background: transparent;
   padding: 0.5rem 0.5rem;
@@ -164,7 +165,6 @@
   color: #efeded;
   font-size: 1.125rem; /* text-lg equivalent */
   font-weight: bold; /* font-bold equivalent */
-  height: 100%; /* h-full equivalent */
   width: 91%; /* w-full equivalent */
   background-color: transparent; /* bg-transparent equivalent */
   padding-left: 0.75rem; /* px-3 equivalent */
@@ -272,18 +272,71 @@
   margin-bottom: 20px;
   border-radius: 8px;
   padding: 20px;
-  width: 100%;
+  width: 80%;
   animation: fade-in 0.5s ease;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 500px) {
+  .container {
+    margin-left: 20px; /* Adjust to center the wider container */
+    margin-right: 20px; /* Adjust to center the wider container */
+    width: calc(100%); /* Adjust to add extra width */
+    padding-left: 20px; /* Adjust to match negative margin */
+    padding-right: 20px; /* Adjust to match negative margin */
+  }
+}
+
+@media (max-width: 700px) {
+  .main {
+    padding-top: 0px;
+  }
+  .searchContainer {
+    margin-left: 20px; /* Adjust to center the wider container */
+    margin-right: 20px; /* Adjust to center the wider container */
+    width: 100%; /* Adjust to add extra width */
+    padding-left: 20px; /* Adjust to match negative margin */
+    padding-right: 20px; /* Adjust to match negative margin */
+  }
+}
+
+@media (max-width: 430px) {
+  .dropdownSearch {
+    min-width: 100px;
+  }
+  .searchContainer {
+    margin-left: 20px; /* Adjust to center the wider container */
+    margin-right: 20px; /* Adjust to center the wider container */
+    width: 100%; /* Adjust to add extra width */
+    padding-left: 20px; /* Adjust to match negative margin */
+    padding-right: 20px; /* Adjust to match negative margin */
+  }
+}
+
+@media (max-width: 392px) {
+  .linkButton {
+    margin-left: 5px;
+  }
+}
+
 .resultsContainer {
+  justify-content: center;
   display: flex;
   flex-flow: wrap;
 }
 
 .container {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px;
+  animation: fade-in 0.5s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.mainContainer {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   padding: 20px;
@@ -390,32 +443,16 @@
   100% { opacity: 1; }
 }
 
-@media (max-width: 622px) {
-  .loading {
-    position: absolute;
-    top: 27%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-  }
-}
 .loaded {
   opacity: 1;
 }
-@media (min-width: 623px) {
-  .loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
+
 
 
 .spinner {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  margin-top: 10px;
   border: 3px solid rgba(0, 0, 0, 0.1);
   border-top-color: rgba(208, 2, 204, 0.5);
   animation: spin 0.5s infinite linear;
