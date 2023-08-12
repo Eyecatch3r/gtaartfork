@@ -148,7 +148,7 @@ export default function Page() {
                     : searchResults.map((result) => (
                         <div
                             key={result.id}
-                            className={`${styles.resultContainer} ${selectedNPCId === result.id ? styles.selected : ''}`}
+                            className={`${selectedNPCId === result.id ? styles.selectedResultContainer : styles.resultContainer}`}
                             onClick={() => handleContainerClick(result.id)}
                         >
                             <div className={`${styles.infoContainer} ${selectedNPCId === result.id ? '' : styles.unselected}`}>
