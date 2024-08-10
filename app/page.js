@@ -22,7 +22,7 @@ export default function Home() {
 
     const handleQuery = async () => {
         setIsLoading(true);
-        const data = { inputs: prompt + " gtav style" };
+        const data = { inputs: prompt };
         const response = await query(data);
 
         if (response) {
@@ -58,7 +58,7 @@ export default function Home() {
                 <h1 className={styles.title}>RP Artwork Generator</h1>
                 <div className={`${styles.mainContainer} min-w-[300px] md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto`}>
                     <form className={styles.searchinput}>
-                        <input type="text" value={prompt} onChange={handleInputChange} placeholder="Enter prompt" className={`${styles.search} mb-4`} />
+                        <input contentEditable={true} type="text" value={prompt} onChange={handleInputChange} placeholder="Enter prompt" className={`${styles.search} mb-4`} />
                         {isLoading?
                             <div className={`${styles.loading}`}>
                                 <div className={styles.spinner}></div>
