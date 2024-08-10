@@ -38,7 +38,7 @@ export default function Home() {
 
     async function query(data) {
         const response = await fetch(
-            "https://api-inference.huggingface.co/models/ItsJayQz/GTA5_Artwork_Diffusion",
+            "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell",
             {
                 headers: { Authorization: "Bearer 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" },
                 method: "POST",
