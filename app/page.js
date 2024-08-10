@@ -55,7 +55,7 @@ export default function Home() {
         <main className={styles.main}>
 
             <div>
-                <h1 className={styles.title}>GTA Artwork Generator</h1>
+                <h1 className={styles.title}>RP Artwork Generator</h1>
                 <div className={`${styles.mainContainer} min-w-[300px] md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto`}>
                     <form className={styles.searchinput}>
                         <input type="text" value={prompt} onChange={handleInputChange} placeholder="Enter prompt" className={`${styles.search} mb-4`} />
