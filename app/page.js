@@ -40,7 +40,7 @@ export default function Home() {
         const response = await fetch(
             "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell",
             {
-                headers: { Authorization: "Bearer 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" },
+                headers: { Authorization: "Bearer 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" , "X-use-cache": false    },
                 method: "POST",
                 body: JSON.stringify(data),
             }
