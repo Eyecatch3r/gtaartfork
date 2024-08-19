@@ -209,7 +209,7 @@
   background: transparent;
   padding: 0.5rem 0.5rem;
   border: 1px solid #ccc;
-  border-radius: 9999px;
+  border-radius: 35px;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -224,6 +224,7 @@
   padding-left: 0.75rem; /* px-3 equivalent */
   padding-right: 0.75rem; /* px-3 equivalent */
   outline: none; /* focus:outline-none equivalent */
+  height: fit-content;
   border: none; /* focus:border-none equivalent */
   transition: border-color 0.2s; /* focus:border-none equivalent */
 }
