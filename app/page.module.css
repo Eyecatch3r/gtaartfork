@@ -503,6 +503,11 @@
   opacity: 1;
 }
 
+.loading {
+  display: flex;
+  align-items: center;
+}
+
 
 
 .spinner {
